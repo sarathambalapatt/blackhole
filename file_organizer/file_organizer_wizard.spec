@@ -1,4 +1,5 @@
 # -*- mode: python ; coding: utf-8 -*-
+
 added_files = [
     ('resources/img/icon.ico','resources/img/')
 ]
@@ -24,7 +25,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='File Organizer v1.1',
+    name='File Organizer v1.2',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

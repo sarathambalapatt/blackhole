@@ -5,14 +5,13 @@ import zipfile
 import customtkinter as ctk
 from tkinter import filedialog, messagebox
 
-
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     base_path = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
     return os.path.join(base_path, relative_path)
 
 def get_desktop_path():
-    """Find the Desktop Path. The Desktop Path will be different if One Drive or any other
+    """Finding the Desktop Path. The Desktop Path will be different if One Drive or any other
     windows cloud service is installed"""
     desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
     if not os.path.exists(desktop_path):
@@ -70,21 +69,22 @@ def extract_files(zip_path):
         messagebox.showinfo("Extraction Complete", "All files have been extracted.")
 
 def merge_files_into_dir(directory_path):
+    """Merging files and compressing to zip file"""
     dir_name = os.path.basename(directory_path)
     desktop_path = get_desktop_path()
     doc_dir = os.path.join(desktop_path, 'temp')
     if not os.path.exists(doc_dir):
         os.makedirs(doc_dir)
-    for dir in os.listdir(directory_path):
-        doc_loc = directory_path + "/" + dir
-        for file in os.listdir(doc_loc):
+    for root, dirs, files in os.walk(directory_path):
+        for file in files:
             if file.endswith('.docx'):
-                source_path = os.path.join(doc_loc, file)
+                source_path = os.path.join(root, file)
                 shutil.copy2(source_path, doc_dir)
     zip_directory(doc_dir, dir_name)
     messagebox.showinfo("Merging Completed", "All files have been merged and zipped.")
 
 def zip_directory(directory_path, zip_name):
+    """Compressing the specified directory to zip file"""
     desktop_path = get_desktop_path()
     zip_name = 'Abhi_' + zip_name + '.zip'
     zip_file_path = os.path.join(desktop_path, zip_name)
@@ -112,15 +112,14 @@ def merge_directory():
         messagebox.showinfo("Directory Selected", f"Merging files from: {directory_path}")
         merge_files_into_dir(directory_path)
 
-
 # Set up the main application window
 ctk.set_appearance_mode("system")  # Options: "light", "dark", "system"
 ctk.set_default_color_theme("blue")  # Change theme color
 
 root = ctk.CTk()
 root.title("File Organizer")
+# Setting icon path for packing in pyinstaller
 icon_path = resource_path("resources/img/icon.ico")
-# icon_path = os.path.join(sys._MEIPASS, "icon.ico")
 root.iconbitmap(icon_path)
 root.geometry("300x150")  # Set the window size
 
