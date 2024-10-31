@@ -3,6 +3,7 @@
 added_files = [
     ('resources/img/icon.ico','resources/img/')
 ]
+
 a = Analysis(
     ['file_organizer_wizard.py'],
     pathex=[],
@@ -24,7 +25,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='File Organizer v1.3',
+    name='File Organizer v1.4',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

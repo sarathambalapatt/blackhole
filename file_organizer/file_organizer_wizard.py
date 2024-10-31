@@ -145,7 +145,7 @@ def sort_zip_file():
         if file_path:
             # messagebox.showinfo("File Selected", f"Sorting ZIP file: {file_path}")
             extract_files(file_path)
-        messagebox.showinfo("Extraction Complete", "All files have been extracted.")
+            messagebox.showinfo("Extraction Complete", "All files have been extracted.")
     except Exception as e:
         messagebox.showinfo("Error", f"An error occurred: {e}")
 
@@ -156,7 +156,7 @@ def sort_directory():
         if directory_path:
             # messagebox.showinfo("Folder Selected", f"Sorting folder from: {directory_path}")
             sort_dir(directory_path)
-        messagebox.showinfo("Sorting Complete", "All files have been sorted.")
+            messagebox.showinfo("Sorting Complete", "All files have been sorted.")
     except Exception as e:
         messagebox.showinfo("Error", f"An error occurred: {e}")
 
@@ -167,7 +167,7 @@ def merge_directory():
         if directory_path:
             # messagebox.showinfo("Folder Selected", f"Merging files from: {directory_path}")
             merge_files_into_dir(directory_path)
-        messagebox.showinfo("Merging Completed", "All files have been merged and zipped.")
+            messagebox.showinfo("Merging Completed", "All files have been merged and zipped.")
     except Exception as e:
         messagebox.showinfo("Error", f"An error occurred: {e}")
 
