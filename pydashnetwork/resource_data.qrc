@@ -1,0 +1,27 @@
+<RCC>
+  <qresource prefix="background">
+    <file>resources/img/analytics_icon.png</file>
+    <file>resources/img/bandwidth.png</file>
+    <file>resources/img/check.png</file>
+    <file>resources/img/close.png</file>
+    <file>resources/img/cogwheel.png</file>
+    <file>resources/img/computer.png</file>
+    <file>resources/img/home.png</file>
+    <file>resources/img/lan.png</file>
+    <file>resources/img/list_icon.png</file>
+    <file>resources/img/logistics_icon.png</file>
+    <file>resources/img/Orca.png</file>
+    <file>resources/img/package_icon.png</file>
+    <file>resources/img/person_icon.png</file>
+    <file>resources/img/returns_icon.png</file>
+    <file>resources/img/settings_icon.png</file>
+    <file>resources/img/shipping_icon.png</file>
+    <file>resources/img/speed-test-gauge.png</file>
+    <file>resources/img/user_invisible.png</file>
+    <file>resources/img/user_offline.png</file>
+    <file>resources/img/user_online.png</file>
+    <file>resources/img/Wi-Fi.png</file>
+    <file>resources/img/Wi-Fi_signal.png</file>
+    <file>resources/img/Wi-Fi_signal_1.png</file>
+  </qresource>
+</RCC>
